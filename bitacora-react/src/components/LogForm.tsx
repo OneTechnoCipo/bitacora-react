@@ -35,7 +35,7 @@ export default function LogForm({ onAddLog, hasLogs, currentInitKm }: Props) {
       
       <form onSubmit={handleSubmit} className="flex flex-wrap gap-4">
         {/* INPUT 1: KM Inicial (Se bloquea si hasLogs es true) */}
-        <div className="flex-1 min-w-[120px]">
+        <div className="flex-1  min-w-30x">
           <label className="block text-sm text-gray-800 mb-1 font-bold">KM Inicial</label>
           <input 
             type="number" 
@@ -48,7 +48,7 @@ export default function LogForm({ onAddLog, hasLogs, currentInitKm }: Props) {
         </div>
 
         {/* INPUT 2: KM Actual */}
-        <div className="flex-1 min-w-[120px]">
+        <div className="flex-1  min-w-30x">
           <label className="block text-sm text-gray-800 mb-1 font-bold">KM Actual</label>
           <input 
             type="number" 
@@ -60,7 +60,7 @@ export default function LogForm({ onAddLog, hasLogs, currentInitKm }: Props) {
         </div>
 
         {/* INPUT 3: Litros */}
-        <div className="flex-1 min-w-[120px]">
+        <div className="flex-1 min-w-30x">
           <label className="block text-sm text-gray-800 mb-1 font-bold">Litros</label>
           <input 
             type="number" 
