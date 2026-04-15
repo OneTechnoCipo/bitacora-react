@@ -1,4 +1,4 @@
-import type { FuelLog } from '../types'; // Le agregamos 'type' acá
+import type { FuelLog } from '../models/types'; // Le agregamos 'type' acá
 
 interface Props {
   logs: FuelLog[];
