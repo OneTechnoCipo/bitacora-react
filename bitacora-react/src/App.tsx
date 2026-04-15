@@ -16,10 +16,14 @@ function App() {
     const [kmInput, setKmInput] = useState<string>('');
     const [litersInput, setLitersInput] = useState<string>('');
 
-    useEffect(() => {
-        localStorage.setItem('bitacora_viaje', JSON.stringify(trip));
-        setResults(calculateStatics(trip));
-    }, [trip]);
+useEffect(() => {
+    localStorage.setItem('bitacora_viaje', JSON.stringify(trip));
+    
+    // The results panel wasn't showing up at first when I added a new load.
+    // I realized I needed to force the calculation to run inside this useEffect 
+    // every time the 'trip' state changes so the UI stays in sync.
+    setResults(calculateStatics(trip));
+  }, [trip]);
 
     const addLoad = (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,7 +35,7 @@ function App() {
     // Mutating the array directly (push) wasn't triggering the re-render.
 
         setTrip(prev => ({
-          
+
             ...prev,
             loads: [...prev.loads, newLoad]
         }));
